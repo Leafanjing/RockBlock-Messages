@@ -1,6 +1,6 @@
-import rockBlock
+import rockBlock.py
  
-from rockBlock import rockBlockProtocol
+from rockBlock.py import rockBlockProtocol
  
 class mtExample (rockBlockProtocol):
     
