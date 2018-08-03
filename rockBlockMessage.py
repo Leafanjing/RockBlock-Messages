@@ -10,7 +10,7 @@ class MoExample (rockBlockProtocol):
         
         rb.sendMessage("Hello World RockBLOCK!")      
     
-    rb.close()
+        rb.close()
         
     def rockBlockTxStarted(self):
         print "rockBlockTxStarted"
