@@ -9,17 +9,17 @@ class MoExample (rockBlockProtocol):
         rb = rockBlock.rockBlock("/dev/ttyUSB0", self)
         
         rb.sendMessage("Hello World RockBLOCK!")      
-        
-        rb.close()
+    
+    rb.close()
         
     def rockBlockTxStarted(self):
-        print("rockBlockTxStarted")
+        print "rockBlockTxStarted"
         
     def rockBlockTxFailed(self):
-        print("rockBlockTxFailed")
+        print "rockBlockTxFailed"
         
     def rockBlockTxSuccess(self,momsn):
-        print(f"rockBlockTxSuccess {momsn}")
-                
+        print "rockBlockTxSuccess " + str(momsn)
+        
 if __name__ == '__main__':
     MoExample().main()
