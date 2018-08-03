@@ -10,7 +10,7 @@ class mtExample (rockBlockProtocol):
              
         rb.messageCheck()
                                                                   
-        rb.close()
+    rb.close()
            
     def rockBlockRxStarted(self):
         print("rockBlockRxStarted")
