@@ -9,8 +9,8 @@ class MoExample (rockBlockProtocol):
         rb = rockBlock.rockBlock("/dev/ttyUSB0", self)
         
         rb.sendMessage("Hello World RockBLOCK!")      
-    
-        rb.close()
+        
+	    rb.close()
         
     def rockBlockTxStarted(self):
         print "rockBlockTxStarted"

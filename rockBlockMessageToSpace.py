@@ -8,21 +8,21 @@ class mtExample (rockBlockProtocol):
         
         rb = rockBlock.rockBlock("/dev/ttyUSB0", self)
              
-        rb.messageCheck()
+        rb.requestMessageCheck()
                                                                   
-    rb.close()
+        rb.close()
            
     def rockBlockRxStarted(self):
-        print("rockBlockRxStarted")
+        print "rockBlockRxStarted"
         
     def rockBlockRxFailed(self):
-        print("rockBlockRxFailed")
-
+        print "rockBlockRxFailed"
+        
     def rockBlockRxReceived(self,mtmsn,data):
-        print(f"rockBlockRxReceived  {mtmsn} {data}")
+        print "rockBlockRxReceived " + str(mtmsn) + " " + data
         
     def rockBlockRxMessageQueue(self,count):
-        print(f"rockBlockRxMessageQueue {count}")
+        print "rockBlockRxMessageQueue " + str(count)
              
         
 if __name__ == '__main__':
