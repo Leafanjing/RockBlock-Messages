@@ -5,10 +5,12 @@ from rockBlock import rockBlockProtocol
 class MoExample (rockBlockProtocol):
     
     def main(self):
-      
+
+        userInput = input('Enter the message RockBlock will send to the Irdidium Satellite Network')
+        
         rb = rockBlock.rockBlock("/dev/ttyUSB0", self)
         
-        rb.sendMessage("Hello World RockBLOCK!")      
+        rb.sendMessage(userInput)      
         
 	    rb.close()
         
