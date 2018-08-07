@@ -6,11 +6,11 @@ class MoExample (rockBlockProtocol):
     
     def main(self):
 
-        userInput = input('Enter the message RockBlock will send to the Irdidium Satellite Network')
-        
+        userString = raw_input('Enter the message RockBlock will send to the Irdidium Satellite Network\n')
+
         rb = rockBlock.rockBlock("/dev/ttyUSB0", self)
         
-        rb.sendMessage(userInput)      
+        rb.sendMessage(userString)      
         
 	    rb.close()
         
