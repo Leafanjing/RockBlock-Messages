@@ -13,16 +13,16 @@ class mtExample (rockBlockProtocol):
         rb.close()
            
     def rockBlockRxStarted(self):
-        print "rockBlockRxStarted"
+        print("rockBlockRxStarted")
         
     def rockBlockRxFailed(self):
-        print "rockBlockRxFailed"
+        print("rockBlockRxFailed")
         
     def rockBlockRxReceived(self,mtmsn,data):
-        print "rockBlockRxReceived " + str(mtmsn) + " " + data
+        print(f"rockBlockRxReceived {mtmsn} {data}")
         
     def rockBlockRxMessageQueue(self,count):
-        print "rockBlockRxMessageQueue " + str(count)
+        print(f"rockBlockRxMessageQueue {count}")
              
         
 if __name__ == '__main__':
