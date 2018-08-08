@@ -570,7 +570,7 @@ class rockBlock(object):
         
         command = "AT-MSSTM"
         
-        self.s.write(command + "\r").encode('utf-8')
+        self.s.write(command + '\r').encode('utf-8')
         
         if( self.s.readline().strip() == command ):  #Echo
             
