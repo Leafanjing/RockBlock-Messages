@@ -70,7 +70,7 @@ class rockBlock(object):
     def ping(self):
         self._ensureConnectionStatus()
                 
-        command = "AT"
+        command = "AT".encode()
                 
         self.s.write(command + "\r").encode()
         
@@ -96,9 +96,9 @@ class rockBlock(object):
     def requestSignalStrength(self):
         self._ensureConnectionStatus()
 
-        command = "AT+CSQ"
+        command = "AT+CSQ".encode()
         
-        self.s.write(command + "\r").encode()
+        self.s.write(command + "\r".encode())
              
         if( self.s.readline().strip() == command):
         
@@ -135,7 +135,7 @@ class rockBlock(object):
     def networkTime(self):
         self._ensureConnectionStatus()
          
-        command = "AT-MSSTM"
+        command = "AT-MSSTM".encode()
                 
         self.s.write(command + "\r").encode()
         
@@ -195,7 +195,7 @@ class rockBlock(object):
     def getSerialIdentifier(self):
         self._ensureConnectionStatus()
         
-        command = "AT+GSN"
+        command = "AT+GSN".encode()
         
         self.s.write(command + "\r").encode()
         
@@ -218,15 +218,14 @@ class rockBlock(object):
         
         
         #Disable Flow Control
-        command = "AT&K0"
-                
+        command = "AT&K0".encode()
         self.s.write(command + "\r").encode()
         
         if(self.s.readline().strip() == command and self.s.readline().strip() == "OK"):
           
             
             #Store Configuration into Profile0
-            command = "AT&W0"
+            command = "AT&W0".encode()
                 
             self.s.write(command + "\r").encode()
             
@@ -234,7 +233,7 @@ class rockBlock(object):
           
             
                 #Use Profile0 as default
-                command = "AT&Y0"
+                command = "AT&Y0".encode()
                     
                 self.s.write(command + "\r").encode()
                 
@@ -242,7 +241,7 @@ class rockBlock(object):
                     
                     
                     #Flush Memory
-                    command = "AT*F"
+                    command = "AT*F".encode()
                     
                     self.s.write(command + "\r").encode()
                 
@@ -303,7 +302,7 @@ class rockBlock(object):
             return False
         
         
-        command = "AT+SBDWB=" + str( len(msg) )
+        command = "AT+SBDWB=".encode() + str( len(msg) )
         
         self.s.write(command + "\r").encode()
         
@@ -354,7 +353,7 @@ class rockBlock(object):
     def _enableEcho(self):
         self._ensureConnectionStatus()
         
-        command = "ATE1"
+        command = "ATE1".encode()
         
         self.s.write(command + "\r").encode('')
         
@@ -372,7 +371,7 @@ class rockBlock(object):
     def _disableFlowControl(self):
         self._ensureConnectionStatus()
         
-        command = "AT&K0"
+        command = "AT&K0".encode()
         
         self.s.write(command + "\r").encode('')
         
@@ -388,7 +387,7 @@ class rockBlock(object):
     def _disableRingAlerts(self):
         self._ensureConnectionStatus()
                 
-        command = "AT+SBDMTA=0"
+        command = "AT+SBDMTA=0".encode()
         
         self.s.write(command + "\r").encode()
         
@@ -413,7 +412,7 @@ class rockBlock(object):
             
             SESSION_ATTEMPTS = SESSION_ATTEMPTS - 1
                          
-            command = "AT+SBDIX"
+            command = "AT+SBDIX".encode()
             
             self.s.write(command + "\r").encode()
             
@@ -568,7 +567,7 @@ class rockBlock(object):
     def _isNetworkTimeValid(self):
         self._ensureConnectionStatus()
         
-        command = "AT-MSSTM"
+        command = "AT-MSSTM".encode()
         
         self.s.write(command + '\r').encode()
         
@@ -591,7 +590,7 @@ class rockBlock(object):
     def _clearMoBuffer(self):
         self._ensureConnectionStatus()
         
-        command = "AT+SBDD0"
+        command = "AT+SBDD0".encode()
                 
         self.s.write(command + "\r").encode()
           
