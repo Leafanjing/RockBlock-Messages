@@ -21,7 +21,9 @@ class MoExample (rockBlockProtocol):
         print("rockBlockTxFailed")
         
     def rockBlockTxSuccess(self, momsn):
-        print(f"rockBlockTxSuccess {momsn}")
+        print(f'rockBlockTxSuccess {momsn}')
+
+
 
 if __name__ == '__main__':
     MoExample().main()
