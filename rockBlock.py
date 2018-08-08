@@ -355,7 +355,7 @@ class rockBlock(object):
         
         command = "ATE1".encode()
         
-        self.s.write(command + "\r").encode('')
+        self.s.write(command + "\r").encode()
         
         response = self.s.readline().strip()
         
