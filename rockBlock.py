@@ -72,11 +72,11 @@ class rockBlock(object):
                 
         command = "AT".encode()
                 
-        self.s.write(command + "\r").encode()
+        self.s.write(command + "\r".encode())
         
-        if( self.s.readline().strip() == command ):
+        if(self.s.readline().strip().decode == command):
             
-            if( self.s.readline().strip() == "OK" ):
+            if( self.s.readline().strip().decode() == "OK" ):
                                                          
                 return True
                                             
@@ -355,13 +355,13 @@ class rockBlock(object):
         
         command = "ATE1".encode()
         
-        self.s.write(command + "\r").encode()
+        self.s.write(command + "\r".encode())
         
-        response = self.s.readline().strip()
+        response = self.s.readline().strip().decode()
         
         if(response == command or response == ""):
                  
-            if( self.s.readline().strip() == "OK" ):
+            if( self.s.readline().strip().decode() == "OK" ):
                 
                 return True
     
